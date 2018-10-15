@@ -34,7 +34,9 @@ class Profiles extends Component {
                         Developer profiles
                     </h1>
                     <p className="lead text-center">Browse and connect with developers</p>
+                    <div className="row">
                     {profileItems}
+                    </div>
                </div>
             </div>
         </div>

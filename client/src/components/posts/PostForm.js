@@ -47,8 +47,8 @@ import { addPost } from '../../actions/postActions'
     const { errors } = this.state
     return (
         <div className="post-form mb-3">
-            <div className="card card-info">
-            <div className="card-header bg-info text-white">
+            <div className="card card-info bg-light border-0">
+            <div className="card-header text-white">
                 Say Somthing...
             </div>
             <div className="card-body">

@@ -8,33 +8,39 @@ class ProfileItem extends Component {
     const { profile } = this.props
 
     return (
-      <div className="card card-body bg-light mb-3">
-        <div className="row">
-            <div className="col-2">
-                <img className="rounded-circle" src={profile.user.avatar} alt="" />
-            </div>
-            <div className="col-lg-6 col-md-4 col-8">
-                <h3>{profile.user.name}</h3>
-                <p>
-                    {profile.status} {isEmpty(profile.company) ? null : (<span>at {profile.company}</span>)}
-                </p>
-                <p>
-                    {isEmpty(profile.location) ? null : (<span>{profile.location}</span>) }
-                </p>
-                <Link to={`/profile/${profile.handle}`} className="btn btn-info">
-                    View profile
-                </Link>
-            </div>
-            <div className="col-md-4 d-none d-md-block">
-                <h4>SKill set</h4>
-                <ul className="list-group">
-                    {profile.skills.slice(0,4).map((skill, index) => (
-                        <li key={index} className="list-group-item">
-                            <i className="fa fa-check pr-1" />
-                            {skill}
-                        </li>
-                    ))}
-                </ul>
+      <div className="col-md-4">
+          <div className="card card-body mb-3">
+            <div className="row">
+                <div className="col-md-3">
+                    <img className="rounded-circle" src={profile.user.avatar} alt="" />
+                </div>
+                <div className="col-lg-9 col-md-9 col-9">
+                    <h4>{profile.user.name}</h4>
+                    <small>
+                        {profile.status} {isEmpty(profile.company) ? null : (<b>at {profile.company}</b>)}
+                    </small>
+                    <p>
+                        {isEmpty(profile.location) ? null : (<small><i class="fas fa-globe-africa pr-1"></i>{profile.location}</small>) }
+                    </p>
+                    
+                </div>
+                <div className="col-md-12 d-none d-md-block mb-3">
+                    <h5>Skill set</h5>
+                        <div>
+                            {profile.skills.slice(0,4).map((skill, index) => (
+                                <small className="mr-2" key={index} >
+                                    <i className="fas fa-check"></i> 
+                                    {skill}
+                                </small>
+                            ))}
+                        </div>
+                <hr />
+                </div>
+                <div className="col-md-12">
+                    <Link to={`/profile/${profile.handle}`} className="btn btn-theme-primary">
+                        View profile
+                    </Link>
+                </div>
             </div>
         </div>
       </div>

@@ -19,9 +19,7 @@ class PostItem extends Component {
     }
 
     findUserLike(likes) {
-        console.log(likes);
         const { auth } = this.props
-        console.log(auth.user.id)
         if (likes.filter(like => like.user === auth.user.id).length > 0) {
             return true
         } else {
@@ -37,14 +35,15 @@ class PostItem extends Component {
                 <div className="row">
                     <div className="col-md-2">
                     <a href="profile.html">
-                        <img className="rounded-circle d-none d-md-block" src={post.avatar}
+                        <img className="d-none d-md-block" src={post.avatar}
                         alt="" />
                     </a>
                     <br />
                     <p className="text-center">{post.name}</p>
                     </div>
                     <div className="col-md-10">
-                    <p className="lead">{post.text}</p>
+                    <h4 className="text-muted">{post.text}</h4>
+                    <hr />
                     { showActions ? (
                         <span>
                             <button onClick={this.onLikeClick.bind(this, post._id)} type="button" className="btn btn-light mr-1">
@@ -56,10 +55,12 @@ class PostItem extends Component {
                             <button onClick={this.onUnLikeClick.bind(this, post._id)}  type="button" className="btn btn-light mr-1">
                                 <i className="text-secondary fas fa-thumbs-down"></i>
                             </button>
-                                <Link className="btn btn-info mr-1" to={`/post/${post._id}`} >Comments</Link>
+                                <Link className="btn btn-theme-primary mr-1" to={`/post/${post._id}`} >
+                                <i className="far fa-comments pr-2"></i> 
+                                Comments</Link>
                             {post.user === auth.user.id ? (
-                                <button onClick={this.onDeleteClick.bind(this, post._id)} type="button" className="btn btn-danger mr-1">
-                                    <i className="fas fa-times" />
+                                <button onClick={this.onDeleteClick.bind(this, post._id)} type="button" className="btn btn-outline-danger mr-1">
+                                    <i className="fas fa-times pr-2" /> Delete post
                                 </button>
                             ) : null }
                         </span>

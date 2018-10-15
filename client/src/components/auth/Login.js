@@ -53,9 +53,9 @@ class Login extends Component {
             <div className="login">
                 <div className="container">
                 <div className="row">
-                    <div className="col-md-8 m-auto">
+                    <div className="col-md-6 m-auto">
                     <h1 className="display-4 text-center">Log In</h1>
-                    <p className="lead text-center">Sign in to your DevConnector account</p>
+                    <p className="lead text-center">Sign in to your <b className="brand-name">Multidoo</b> account</p>
                     <form onSubmit={this.onSubmit}>
                     <TextFieldGroup 
                         placeholder='Email address'
@@ -73,7 +73,7 @@ class Login extends Component {
                         onChange={this.onChange}
                         error={errors.password}
                     />
-                        <input type="submit" className="btn btn-info btn-block mt-4" />
+                        <input type="submit" className="btn btn-theme-primary btn-block mt-4" />
                     </form>
                     </div>
                 </div>

@@ -6,11 +6,43 @@ img {
   width: 100%;
 }
 
+.brand-name {
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: bold;
+}
+
+.nav-username {
+  color: #000;
+  font-size: 15px;
+}
+
+.btn-theme-primary {
+  padding: 10px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 3px;
+  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.navbar-brand.brand-name {
+  font-size: 22px;
+  background-image: -webkit-linear-gradient(left, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+  background-image: linear-gradient(to right, #8fd3f4 0%, #8fd3f4 41%, #84fab0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .landing {
   position: relative;
-  background: url('./img/connect.jpeg') no-repeat;
+  background: url('./img/landing-bg.jpg') no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   height: 100vh;
   margin-top: -24px;
 }
@@ -20,7 +52,7 @@ img {
 }
 
 .dark-overlay {
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgba(0, 0, 0, .45);
   position: absolute;
   top: 0;
   left: 0;
@@ -43,7 +75,7 @@ img {
 
 .landing-btn {
   margin: 20px 10px 10px 10px;
-  padding: 20px 30px;
+  padding: 18px 30px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
@@ -51,11 +83,28 @@ img {
   color: white;
   box-shadow: 0 0 20px #eee;
   border-radius: 3px;
+  display: inline-block;
 }
 
 .landing-btn__signup {
   background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
   box-shadow: none;
+}
+
+.landing-btn__login {}
+
+.landing-btn__login:hover,
+.landing-btn__signup:hover {
+  color:#fff;
+  text-decoration: none;
+}
+
+.landing-btn__login:hover {
+  color: #aaa;
+}
+
+.landing-btn__signup:hover {
+  color:#0d7b4c;
 }
 
 .features-icons {
@@ -67,5 +116,44 @@ img {
 }
 
 .features-icons-icon i:before {
-  color:#000 ;
+  color:#81e7c2 ;
+}
+
+.profile-header {
+  background-image: -webkit-linear-gradient(to right, #8fd3f4 0%, #8fd3f4 41%, #84fab0 100%);
+  background-image: linear-gradient(to right, #8fd3f4 0%, #8fd3f4 41%, #84fab0 100%);
+  border: none;
+}
+
+.fa-thumbs-up.text-success:before {
+  color: #80edb7;
+}
+
+.post-form .card-header {
+  background: #8fd3f4 ;
+  border: none;
+}
+
+.dashboard .btn-group i:before {
+  color: #fff;
+}
+
+.profile-action-buttons a {
+  background-color: #8fd3f4;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+.dashboard-username a {
+  color: #c7c7c7;
+  font-weight: 700;
+  text-decoration: underline;
+  font-size: 19px;
+  margin-left: 5px;
+}
+
+.dashboard-username a i {
+  font-size: 14px;
 }

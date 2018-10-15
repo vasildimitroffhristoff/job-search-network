@@ -23,18 +23,33 @@ class Navbar extends Component {
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="/dashboard">
-                        Dashboard
+                    <Link className="nav-link" to="/messages">
+                        <i className="far fa-envelope pr-2"></i>
+                        Inbox
                     </Link>
                 </li>
-                <li className="nav-item pl-3">
-                    <a style={{ lineHeight: "40px" }} onClick={this.onLogoutClick.bind(this)} href="">
-                        <img style={{ width: '25px', marginRight: '5px' }} src={user.avatar} className="rounded-circle" alt={user.name} title="You must have a gravatar connected to your email to display an image"/>
-                        Logout
+         
+                <li className="nav-item">
+                <div className="dropdown show">
+                    <a className="nav-username btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img style={{ width: '20px', marginRight: '10px' }} src={user.avatar} className="rounded-circle" alt={user.name} title="You must have a gravatar connected to your email to display an image"/>
+                        <b>{ user.name }</b>
                     </a>
+
+                    <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                        <Link className="dropdown-item" to="/dashboard">
+                            Settings
+                        </Link>
+                        <a className="dropdown-item" onClick={this.onLogoutClick.bind(this)} href="">
+                            Logout <i className="fas fa-sign-out-alt pl-2"></i>
+                        </a>
+                    </div>
+                    </div>
                 </li>
             </ul>
     )
+
+    
 
     const guestLinks = (
         <ul className="navbar-nav ml-auto">
@@ -52,15 +67,16 @@ class Navbar extends Component {
     return (
         <nav className="navbar navbar-expand-sm navbar-light bg-light mb-4">
             <div className="container">
-            <Link className="navbar-brand" to="/dashboard">DevConnector</Link>
+            <Link className="navbar-brand brand-name" to="/dashboard">Multidoo</Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-nav">
                 <span className="navbar-toggler-icon"></span>
             </button>
 
             <div className="collapse navbar-collapse" id="mobile-nav">
                 <ul className="navbar-nav mr-auto">
-                <li className="nav-item">
-                    <Link className="nav-link" to="/profiles"> Developers
+                <li className="nav-item ml-2">
+                    <Link className="nav-link" to="/profiles"> 
+                    <i className="fas fa-user-astronaut pr-2"></i>Developers
                     </Link>
                 </li>
                 </ul>

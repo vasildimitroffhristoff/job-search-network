@@ -26,20 +26,22 @@ class Education extends Component {
     
     return (
       <div>
-          <h4 className="mb-2">Education Credentials</h4>
-          <table className="table">
-            <thead>
-                <tr>
-                    <th>Company</th>
-                    <th>Title</th>
-                    <th>Years</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {education}
-            </tbody>
-          </table>
+          <h5 className="mb-2">Education Credentials</h5>
+          {this.props.education.length > 0 ? (
+              <table className="table">
+              <thead className="thead-light">
+                  <tr>
+                      <th>Company</th>
+                      <th>Title</th>
+                      <th>Years</th>
+                      <th></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {education}
+              </tbody>
+            </table>
+          ) : (<small className="text-muted d-block"><hr/>You have not added <b>education data</b> to your profile yet.</small>)}
       </div>
     )
   }
