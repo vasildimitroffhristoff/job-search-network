@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "classnames": "^2.2.5",
+    "draft-js": "^0.10.5",
     "jwt-decode": "^2.2.0",
     "moment": "^2.22.0",
     "react": "^16.3.1",
@@ -12,6 +13,7 @@
     "react-moment": "^0.7.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
+    "react-rte": "^0.16.1",
     "react-scripts": "1.1.4",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"

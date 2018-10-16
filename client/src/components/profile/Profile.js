@@ -37,10 +37,16 @@ class Profile extends Component {
                     </div>
                     <div className="col-md-6"></div>
                 </div>
-                <ProfileHeader profile={profile} />
-                <ProfileAbout profile={profile} />
-                <ProfileCreds education={profile.education} experience={profile.experience}/>
-                {profile.githubusername ? (<ProfileGithub username={profile.githubusername} />) : null}
+               <div className="row">
+                    <div className="col-md-4">
+                        <ProfileHeader profile={profile} />
+                    </div>
+                    <div className="col-md-8">
+                        <ProfileAbout profile={profile} />
+                        <ProfileCreds education={profile.education} experience={profile.experience}/>
+                        {profile.githubusername ? (<ProfileGithub username={profile.githubusername} />) : null}
+                    </div>
+               </div>
             </div>
         )
     }

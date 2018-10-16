@@ -29,7 +29,7 @@ class Dashboard extends Component {
         if (Object.keys(profile).length > 0) {
             dashboardContent = (
                 <div>
-                    <h4 className="text-muted mb-4 dashboard-username">Welcome <Link to={`/profile/${profile.handle }`}><i className="fas fa-user pr-1"></i>{ user.name }</Link></h4>
+                    <h4 className="text-muted mb-4 dashboard-username">Welcome, <Link to={`/profile/${profile.handle }`}>{ user.name }</Link></h4>
                   
                     <ProfileActions />
                     <Experience experience={ profile.experience }  />
@@ -45,7 +45,7 @@ class Dashboard extends Component {
                 <div>
                     <p className="lead text-muted">Welcome { user.name }</p>
                     <p>You have not setup profile. Please add some infor</p>
-                    <Link to="/create-profile" className="btn btn-lg btn-info">Create profile</Link>
+                    <Link to="/create-profile" className="btn btn-lg btn-theme-primary">Create profile</Link>
                 </div>
             )
         }

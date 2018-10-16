@@ -14,6 +14,9 @@ import AddExperience from './components/add-credential/AddExperience'
 import AddEducation from './components/add-credential/AddEducation'
 import Profiles from './components/profiles/Profiles'
 import Profile from './components/profile/Profile'
+import Jobs from './components/jobs/Jobs'
+import Job from './components/job/Job'
+import JobPost from './components/job-post/JobPost'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import Landing from './components/landingPage/Landing'
@@ -51,6 +54,8 @@ class App extends Component {
                     <Route exact path="/login" component={Login} />  
                     <Route exact path="/profiles" component={Profiles} />   
                     <Route exact path="/profile/:handle" component={Profile} />   
+                    <Route exact path="/jobs" component={Jobs} />   
+                    <Route exact path="/jobs/:id" component={Job} />   
 
                     <Switch>
                       <PrivateRoute exact path="/dashboard" component={Dashboard} />  
@@ -72,6 +77,9 @@ class App extends Component {
                     </Switch>
                     <Switch>
                       <PrivateRoute exact path="/post/:id" component={Post} />  
+                    </Switch>
+                    <Switch>
+                      <PrivateRoute exact path="/job-post" component={JobPost} />  
                     </Switch>
                     <Route exact path="/not-found" component={NotFound} />   
                 </div>

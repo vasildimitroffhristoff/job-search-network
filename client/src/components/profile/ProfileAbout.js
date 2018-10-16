@@ -5,6 +5,7 @@ class ProfileAbout extends Component {
   render() {
     const {profile} = this.props
     const firstName = profile.user.name.trim().split(' ')[0]
+    const sendMailToString = `mailto:${profile.user.email}`
     const skills = profile.skills.map((skill, index) => (
       <div key={index} className="p-3">
         <i className="fa fa-check"></i> {skill}
@@ -25,6 +26,15 @@ class ProfileAbout extends Component {
                       {skills}
                   </div>
                 </div>
+                <hr />
+                <h3 className="text-center text-info">Contacts</h3>
+                <div className="row text-center">
+                    <div className="col-md-12">
+                      <i className="far fa-envelope text-muted pr-2"></i>
+                      <a href={sendMailToString} className="text-muted">{profile.user.email}</a>
+                    </div>
+                </div>
+
               </div>
             </div>
           </div>

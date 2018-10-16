@@ -2,8 +2,16 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+.RichTextEditor__editor___1QqIU .public-DraftEditor-content {
+  min-height: 150px;
+}
+
 img {
   width: 100%;
+}
+
+.text-light-green {
+  color: #7feeb4;
 }
 
 .brand-name {
@@ -13,7 +21,7 @@ img {
 
 .nav-username {
   color: #000;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .btn-theme-primary {
@@ -135,12 +143,13 @@ img {
 }
 
 .dashboard .btn-group i:before {
-  color: #fff;
+  color: #495057;
+  opacity: .8;
 }
 
 .profile-action-buttons a {
-  background-color: #8fd3f4;
-  color: #fff;
+  background-color: #e9ecef;
+  color: #495057;
   font-size: 13px;
   font-weight: 700;
 }
@@ -149,8 +158,7 @@ img {
 .dashboard-username a {
   color: #c7c7c7;
   font-weight: 700;
-  text-decoration: underline;
-  font-size: 19px;
+  font-size: 21px;
   margin-left: 5px;
 }
 

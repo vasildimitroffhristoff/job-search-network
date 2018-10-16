@@ -17,13 +17,19 @@ class Navbar extends Component {
     const {isAuthenticated, user} = this.props.auth
     const authLinks = (
             <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                    <Link className="nav-link" to="/feed">
-                        Post Feed
+              <li className="nav-item mr-3">
+                    <Link  className="nav-link shadow-sm bg-white rounded text-muted pr-3 pt-1 pb-1 pl-3" to="/job-post">
+                    <i className="fas fa-briefcase pr-2"></i>
+                        Post New Job
                     </Link>
                 </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/messages">
+                {/* <li className="nav-item">
+                    <Link className="nav-link" to="/feed">
+                        Posts
+                    </Link>
+                </li> */}
+                <li className="nav-item mr-2">
+                    <Link className="nav-link shadow-sm bg-white rounded text-muted pr-3 pt-1 pb-1 pl-3" to="/messages">
                         <i className="far fa-envelope pr-2"></i>
                         Inbox
                     </Link>
@@ -38,7 +44,7 @@ class Navbar extends Component {
 
                     <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                         <Link className="dropdown-item" to="/dashboard">
-                            Settings
+                            Profile
                         </Link>
                         <a className="dropdown-item" onClick={this.onLogoutClick.bind(this)} href="">
                             Logout <i className="fas fa-sign-out-alt pl-2"></i>
@@ -77,6 +83,11 @@ class Navbar extends Component {
                 <li className="nav-item ml-2">
                     <Link className="nav-link" to="/profiles"> 
                     <i className="fas fa-user-astronaut pr-2"></i>Developers
+                    </Link>
+                </li>
+                <li className="nav-item ml-2">
+                    <Link className="nav-link" to="/jobs"> 
+                        <i className="fas fa-user-tie pr-2"></i>Jobs
                     </Link>
                 </li>
                 </ul>

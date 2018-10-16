@@ -14,7 +14,11 @@ class Profiles extends Component {
     const { profiles, loading } = this.props.profile
     let profileItems;
     if (profiles === null || loading) {
-        profileItems = <Spinner />
+        profileItems = (
+          <div className="col-md-12">
+              <Spinner />
+          </div>  
+        )
     } else {
         if (profiles.length > 0) {
             console.log(profiles)

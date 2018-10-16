@@ -41,8 +41,8 @@ export default class Features extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div class="col-md-8 mx-auto">
-                        <i class="d-block display-2 text-muted fas fa-plug mb-4"></i>
+                    <div className="col-md-8 mx-auto">
+                        <i style={{ opacity: "0.1" }} className="d-block display-2 text-muted fas fa-plug mb-4"></i>
                         <h3 className="text-muted">I've Seen The Future, And It's <b className="brand-name">Multidoo</b> People-Shaped.</h3>
                         <p className="text-muted">Things work out best for those who make the best of how things work out.</p>
                         <Link to="/register" className="landing-btn landing-btn__signup">Start connecting now</Link>

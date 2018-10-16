@@ -8,10 +8,6 @@ const Profile = require('../../models/Profile')
 
 const validatePostInput = require('../../validation/post')
 
-router.get('/test', (req, res) => {
-    res.json({ msg: "posts works" })
-})
-
 /* 
 @route  :: GET /api/post
 @desc   :: Get posts

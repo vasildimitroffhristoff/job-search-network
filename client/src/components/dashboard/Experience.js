@@ -24,7 +24,7 @@ class Experience extends Component {
         </tr>
     ))
     return (
-      <div>
+      <div className="mb-4">
           <h5 className="mb-2">Experience Credentials</h5>
           {this.props.experience.length > 0 ? (
               <table className="table">
