@@ -42,7 +42,7 @@ export default class JobItem extends Component {
                                     <small className="text-light-green font-weight-bold"><Moment fromNow>{job.date}</Moment></small>
                                 </div>
                                 <div className="col text-right">
-                                    <a href="#" className="btn btn-theme-primary">Apply for the job</a>
+                                    <Link to={`/jobs/${job._id}`} className="btn btn-theme-primary">View more info </Link>
                                 </div>
                             </div>
                         </div>

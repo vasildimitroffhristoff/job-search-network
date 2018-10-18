@@ -48,6 +48,22 @@ export const addJob = (jobData, history) => dispatch => {
         )
 }
 
+export const applyForJob = (id, history) => dispatch => {
+    axios.post(`/api/jobs/apply/${id}`)
+        .then(res => history.push('/jobs'))
+        .catch(err => 
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            })
+        )
+}
+
+// get all applications for user's job
+export const getAllJobApplications = (id) => dispatch => {
+    
+}
+
 export const setJobLoading = () => {
     return {
         type: JOB_LOADING
