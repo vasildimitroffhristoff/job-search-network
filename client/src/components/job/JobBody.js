@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import isEmpty from '../../validation/is-empty'
+
 
 export default class JobBody extends Component {
   render() {

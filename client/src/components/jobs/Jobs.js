@@ -21,7 +21,7 @@ class Jobs extends Component {
     } else {
         if (jobs.length > 0) {
             jobsContent = jobs.map(job => (
-                <JobItem key={job.id} job={job} />
+                <JobItem key={job._id} job={job} />
             ))
         } else {
             jobsContent = <h4>No jobs found.</h4>
