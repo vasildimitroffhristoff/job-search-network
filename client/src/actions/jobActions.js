@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { GET_JOBS, GET_JOB, ADD_JOB, DELETE_JOB, JOB_LOADING, GET_ERRORS } from './types'
+import { GET_JOBS, GET_JOB, ADD_JOB, DELETE_JOB, JOB_LOADING, GET_ERRORS, CLEAR_ERRORS } from './types'
 
 export const getJobs = () => dispatch => {
     dispatch(setJobLoading())
@@ -19,6 +19,7 @@ export const getJobs = () => dispatch => {
 }
 
 export const getJob = (id) => dispatch => {
+    dispatch(clearErrors())
     dispatch(setJobLoading())
     axios.get(`/api/jobs/${id}`)
         .then(res => {
@@ -50,7 +51,10 @@ export const addJob = (jobData, history) => dispatch => {
 
 export const applyForJob = (id, history) => dispatch => {
     axios.post(`/api/jobs/apply/${id}`)
-        .then(res => history.push('/jobs'))
+        .then(res => {
+            history.push(`/successful-application/${id}`)
+            console.log(res)
+        })
         .catch(err => 
             dispatch({
                 type: GET_ERRORS,
@@ -62,6 +66,12 @@ export const applyForJob = (id, history) => dispatch => {
 // get all applications for user's job
 export const getAllJobApplications = (id) => dispatch => {
     
+}
+
+export const clearErrors = () => {
+    return {
+        type: CLEAR_ERRORS
+    }
 }
 
 export const setJobLoading = () => {

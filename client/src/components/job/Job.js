@@ -19,13 +19,9 @@ class Job extends Component {
   }  
 
   componentWillReceiveProps(nextProps) {
-        // if(!nextProps.auth.isAuthenticated) {
-        //     this.setState({ errors: 'You must have an account in order to apply for this job.' })
-        // }
-
-        // if (nextProps.errors === 'Unathorized') {
-        //     this.setState({ errors: 'You must have an account in order to apply for this job.' })
-        // }
+        if (nextProps.errors) {
+            this.setState({ errors: nextProps.errors })
+        }
     }
 
   onApplyForJob(id) {
@@ -39,6 +35,7 @@ class Job extends Component {
   render() {
     const { job, loading } = this.props.job
     const { errors } = this.state
+    console.log(errors)
 
     let jobContent;
     if (job === null || loading || Object.keys(job).length === 0) {
@@ -52,6 +49,11 @@ class Job extends Component {
                         {errors.length > 0
                             ? <small className="d-block pt-3" style={{ color: 'tomato' }}>{errors}</small> 
                             : null}
+
+                         {errors.cannotapply
+                            ? <small className="d-block pt-3" style={{ color: 'tomato' }}>{errors.cannotapply}</small> 
+                            : null}    
+                            
                     </div>
                 </div>
         )

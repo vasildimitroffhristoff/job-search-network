@@ -83,7 +83,7 @@ router.post('/apply/:id', passport.authenticate('jwt', {session: false}), (req, 
                 .then(job => {
                     // check if user ID is in the applications array
                     if (job.applications.filter(application => application.user.toString() === req.user.id ).length > 0) {
-                        res.status(404).json({ caanotapply: "You have already applied for this job." })
+                        res.status(404).json({ cannotapply: "You have already applied for this job." })
                     }
                     // check if this job belongs to the user 
                     if(job.user.toString() === req.user.id) { 

@@ -7,7 +7,7 @@ export default class JobBody extends Component {
     const { job } = this.props  
     return (
       <div className="job-content">
-        <div className="d-flex justify-content-between">
+        <div className="job-header d-md-flex justify-content-between">
             <div>
                 <h3 className="text-info mb-2">{ job.position }</h3>
                 <div className="mb-4">
