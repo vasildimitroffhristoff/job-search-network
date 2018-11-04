@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
-import JobItem from './JobItem'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux';
 import { getJobs } from '../../actions/jobActions'
+import JobItem from './JobItem'
 import Spinner from '../common/Spinner'
 
 class Jobs extends Component {
