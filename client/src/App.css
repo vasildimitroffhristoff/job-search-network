@@ -36,6 +36,7 @@ img {
   background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
   font-weight: bold;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .navbar-brand.brand-name {
@@ -154,7 +155,6 @@ img {
   font-weight: 700;
 }
 
-
 .dashboard-username a {
   color: #c7c7c7;
   font-weight: 700;
@@ -165,3 +165,86 @@ img {
 .dashboard-username a i {
   font-size: 14px;
 }
+
+@media (max-width: 479px) {
+  .landing {
+    background-position: left top;
+  }
+  .landing h1 {
+    font-size: 30px;
+  }
+  .landing h1 ~ .lead {
+    font-size: 16px;
+  } 
+
+  .dark-overlay {
+    background-color: rgba(0, 0, 0, .7)
+  }
+
+  .profiles h1 {
+    font-size: 30px;
+  }
+
+  .profiles h1 ~ .lead {
+    font-size: 16px;
+  }
+
+  .profiles .card {
+    text-align-last: center;
+  }
+
+  .profiles .card img {
+    max-width: 120px;
+    margin: 0 auto;
+  }
+
+  .profiles .profiles-info {
+    margin: 0 auto;
+  }
+
+  .jobs .card .col {
+    display: block;
+    flex: none;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+  }
+
+  .jobs .btn-theme-primary {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .job-content .btn-theme-primary {
+    width: 100% !important;
+  }
+
+  .auth-links .nav-item {
+    margin: 6px 0;
+    width: 100%;
+  }
+  
+  .auth-links .nav-item .nav-link {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    padding-left: 8px !important;
+  }
+  .dashboard .btn-group {
+    flex: none;
+    display: block;
+  }
+
+  .dashboard .btn-group a {
+    display: block;
+    border-radius: 0;
+  }
+
+  .job-post h1 {
+    font-size: 30px;
+  }
+
+  .job-post h1 ~ .lead {
+    font-size: 16px;
+  }
+} 

@@ -16,7 +16,7 @@ class Navbar extends Component {
     render() {
     const {isAuthenticated, user} = this.props.auth
     const authLinks = (
-            <ul className="navbar-nav ml-auto">
+            <ul className="navbar-nav ml-auto auth-links">
               <li className="nav-item mr-3">
                     <Link  className="nav-link shadow-sm bg-white rounded text-muted pr-3 pt-1 pb-1 pl-3" to="/job-post">
                     <i className="fas fa-briefcase pr-2"></i>

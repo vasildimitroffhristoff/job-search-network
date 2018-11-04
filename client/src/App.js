@@ -17,6 +17,8 @@ import Profile from './components/profile/Profile'
 import Jobs from './components/jobs/Jobs'
 import Job from './components/job/Job'
 import JobPost from './components/job-post/JobPost'
+import SuccessfulApplication from './components/success-application/SuccessfulApplication'
+import Messages from './components/messages/Messages'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import Landing from './components/landingPage/Landing'
@@ -81,6 +83,14 @@ class App extends Component {
                     <Switch>
                       <PrivateRoute exact path="/job-post" component={JobPost} />  
                     </Switch>
+                    <Switch>
+                      <PrivateRoute exact path="/successful-application/:id" component={SuccessfulApplication} />  
+                    </Switch>
+                    <Switch>
+                      <PrivateRoute exact path="/messages" component={Messages} />  
+                    </Switch>
+
+                    
                     <Route exact path="/not-found" component={NotFound} />   
                 </div>
                 <Footer />

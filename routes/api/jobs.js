@@ -18,7 +18,6 @@ router.get('/', (req, res) => {
 
     Job.find({})
         .sort({date: -1})
-        .select('-applications')
         .then(jobs => {
             if (!jobs) {
                 errors.nojobs = 'There are now jobs found.'
@@ -36,7 +35,6 @@ router.get('/', (req, res) => {
 */
 router.get('/:id', (req, res) => {
     Job.findById(req.params.id)
-        .select('-applications')
         .then(job => {
             res.json(job)
         })
@@ -78,11 +76,20 @@ router.post('/apply/:id', passport.authenticate('jwt', {session: false}), (req, 
     Profile.findOne({ user: req.user.id })
         .then(profile => {
             if (!profile) {
-                errors.noprofile = 'You must have a profile in order to apply for this job'
+                errors.noprofile = 'You must have a profile in order to apply for this job.'
                 return res.status(404).json(errors)
             }
             Job.findById(req.params.id)
                 .then(job => {
+                    // check if user ID is in the applications array
+                    if (job.applications.filter(application => application.user.toString() === req.user.id ).length > 0) {
+                        res.status(404).json({ cannotapply: "You have already applied for this job." })
+                    }
+                    // check if this job belongs to the user 
+                    if(job.user.toString() === req.user.id) { 
+                        res.status(404).json({ cannotapply: "You cannot apply for your own job post." })
+                    }
+
                     job.applications.unshift({ user: req.user.id })
                     job.save().then(job => res.json(job.applications))
                 })
@@ -97,7 +104,6 @@ router.post('/apply/:id', passport.authenticate('jwt', {session: false}), (req, 
 @access :: Private
 */
 router.get('/applications/:userid', passport.authenticate('jwt', {session: false}), (req, res) => {
-    console.log('log');
         Job.find({ user: req.user.id })
             .select('applications')
             .then(applications => {

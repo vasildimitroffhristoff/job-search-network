@@ -14,7 +14,7 @@ class ProfileItem extends Component {
                 <div className="col-md-2">
                     <img className="rounded-circle" src={profile.user.avatar} alt="" />
                 </div>
-                <div className="col-lg-10 col-md-9 col-9">
+                <div className="profiles-info col-lg-10 col-md-9 col-9">
                     <h4 className="mb-0">{profile.user.name}</h4>
                     <small className="text-muted">
                         {profile.status} {isEmpty(profile.company) ? null : (<b className="text-dark">at {profile.company}</b>)}
